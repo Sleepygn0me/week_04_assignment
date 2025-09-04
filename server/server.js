@@ -50,3 +50,9 @@ app.post("/add-games", (req, res) => {
   );
   res.json("Data sent", query);
 });
+
+app.delete("/games/:id", async (req, res) => {
+  const gameId = req.params.id;
+  await db.query("DELETE FROM games WHERE id = $1", [gameId]);
+  res.json({ message: "game deleted successfully" });
+});

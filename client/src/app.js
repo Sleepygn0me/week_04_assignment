@@ -49,6 +49,20 @@ async function displayGames() {
         <p><strong>Message:</strong>${game.message}</p>
         <hr>
       `;
+
+    //delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "delete";
+    deleteButton.classList.add("delete-button");
+
+    deleteButton.addEventListener("click", async () => {
+      await fetch(
+        `https://week-04-assignment-zij1.onrender.com/games/${game.id}`,
+        { method: "DELETE" }
+      );
+      displayGames();
+    });
+    gameMessage.appendChild(deleteButton);
     messageContainer.appendChild(gameMessage);
   });
 }

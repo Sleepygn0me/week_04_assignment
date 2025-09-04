@@ -49,3 +49,17 @@ button:hover {
   transition: transform 0.2s;
   margin-top: 10px;
 }
+
+.delete-button {
+  background-color: #ff4d4f;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #ff7875;
+}
