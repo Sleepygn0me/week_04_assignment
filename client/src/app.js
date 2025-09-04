@@ -15,7 +15,7 @@ async function handleSubmit(event) {
   console.log(formValues);
   // send the data to the server
   const response = await fetch(
-    "https://week-04-assignment-zij1.onrender.com/",
+    "https://week-04-assignment-zij1.onrender.com/add-games",
     {
       method: "POST",
       headers: {
@@ -36,7 +36,9 @@ async function handleSubmit(event) {
 const messageContainer = document.getElementById("messageContainer");
 // Function to fetch and display all games
 async function displayGames() {
-  const response = await fetch("https://week-04-assignment-zij1.onrender.com/");
+  const response = await fetch(
+    "https://week-04-assignment-zij1.onrender.com/games"
+  );
   const games = await response.json();
 
   // Clear previous entries
