@@ -60,6 +60,8 @@ async function displayGames() {
         `https://week-04-assignment-zij1.onrender.com/games/${game.id}`,
         { method: "DELETE" }
       );
+      const data = await response.json();
+      alert(data.message || "Entry deleted successfully");
       displayGames();
     });
     gameMessage.appendChild(deleteButton);
