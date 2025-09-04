@@ -22,7 +22,7 @@ app.get("/", (_, res) => {
 });
 
 //todo: I wnat to READ all data from my table
-// http://localhost:8080/games --> endpoint, params
+// https://week-04-assignment-zij1.onrender.com/ --> endpoint, params
 app.get("/games", async function (req, res) {
   //we need to query our database here
   const query = await db.query(`SELECT * FROM games;`);

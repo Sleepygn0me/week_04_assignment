@@ -2,13 +2,50 @@
 
 body {
   background-color: antiquewhite;
+  margin: 0%;
+  padding: 20px;
 }
 
 h1 {
   font-size: x-large;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+form input,
+form button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 button:hover {
   cursor: pointer;
+  background-color: #45a049;
+}
+
+#messageContainer {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.game-entry {
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  margin-top: 10px;
 }
