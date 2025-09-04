@@ -4,9 +4,7 @@
 const gamesForm = document.getElementById("games-form");
 
 //add submit even to the DOM
-gamesForm.addEventListener("submit", handleSubmit);
-
-async function handleSubmit(event) {
+gamesForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   //create a newtemplate object using form inputs
   const formData = new FormData(gamesForm);
@@ -18,21 +16,18 @@ async function handleSubmit(event) {
     "https://week-04-assignment-zij1.onrender.com/add-games",
     {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ formValues }),
     }
   );
+
   const data = await response.json(); // parse JSON
   alert("Game added successfully!");
-  gamesForm.reset(); // clear the form
-}
-//    -send data (JSON) to the server --> while in development the server url uses localhost, but when you finish deploying and your project is done you need to replace the localhost url with the server deployed url.
+  gamesForm.reset();
+  displayGames(); // clear the form
+});
 
-//todo: get database data from server
-// -connect our client with the specific server route that GETs my data
-// - in some sort of loop, create new HTML elements to display each piece of data and append to the DOM (look at the cookie clicker it will help )
+//display message
 const messageContainer = document.getElementById("messageContainer");
 // Function to fetch and display all games
 async function displayGames() {
@@ -59,21 +54,5 @@ async function displayGames() {
 }
 
 // Also refresh the list after a new game is added
-gamesForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const formData = new FormData(gamesForm);
-  const formValues = Object.fromEntries(formData);
 
-  const response = await fetch(
-    "https://week-04-assignment-zij1.onrender.com/add-games",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ formValues }),
-    }
-  );
-  displayGames(); // refresh the list after adding
-});
 displayGames();
