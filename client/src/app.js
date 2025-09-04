@@ -58,20 +58,22 @@ async function displayGames() {
   });
 }
 
-displayGames();
-
 // Also refresh the list after a new game is added
 gamesForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(gamesForm);
   const formValues = Object.fromEntries(formData);
 
-  await fetch("https://week-04-assignment-zij1.onrender.com/add-games", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ formValues }),
-  });
+  const response = await fetch(
+    "https://week-04-assignment-zij1.onrender.com/add-games",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ formValues }),
+    }
+  );
   displayGames(); // refresh the list after adding
 });
+displayGames();
