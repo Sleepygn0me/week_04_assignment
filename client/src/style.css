@@ -8,3 +8,7 @@ h1 {
   font-size: x-large;
   font-weight: bold;
 }
+
+button:hover {
+  cursor: pointer;
+}
