@@ -20,3 +20,33 @@ app.listen(PORT, () => {
 app.get("/", (_, res) => {
   res.json({ message: "Welcome to the server. GET comfy" });
 });
+
+//todo: I wnat to READ all data from my table
+// http://localhost:8080/games --> endpoint, params
+app.get("/games", async function (req, res) {
+  //we need to query our database here
+  const query = await db.query(`SELECT * FROM games;`);
+  console.log(query);
+  //parse data into JSON and wrangle data
+  res.json(query.rows);
+});
+
+//todo: I want to create new data in the table
+// i want to remember the body and form values
+app.post("/add-games", (req, res) => {
+  // and element to store the data
+  const newGames = req.body;
+
+  //database query
+  //in our SQL queries, we can have a placeholder parameter that we will replace with the actual values when the client sends them
+  const query = db.query(
+    `INSERT INTO games(name, title, platform, message) VALUES ($1, $2, $3, $4)`,
+    [
+      newGames.formValues.name,
+      newGames.formValues.title,
+      newGames.formValues.platform,
+      newGames.formValues.message,
+    ]
+  );
+  res.json("Data sent", query);
+});

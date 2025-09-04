@@ -1,24 +1,19 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+//todo: collect data form user amd send to server
+//-select the html element with user's input
+//select form from the DOM
+const gamesForm = document.getElementById("games-form");
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+//add submit even to the DOM
+gamesForm.addEventListener("submit", handleSubmit);
 
-setupCounter(document.querySelector('#counter'))
+//-add and event to this html element
+
+//-the event handler has the following steps:
+//    -prevent default behaviour of the even
+//    -create template for the userser data
+//    - fill in the template with usere;s data
+//    -send data (JSON) to the server --> while in development the server url uses localhost, but when you finish deploying and your project is don you need to replace the localhost url with the server deployed url.
+
+//todo: get database data from server
+// -connect our client with the specific server route that GETs my data
+// - in some sort of loop, create new HTML elements to display each piece of data and append to the DOM (look at the cookie clicker it will help )
