@@ -56,14 +56,11 @@ async function displayGames() {
     deleteButton.classList.add("delete-button");
 
     deleteButton.addEventListener("click", async () => {
-      const deleteResponse = await fetch(
+      await fetch(
         `https://week-04-assignment-zij1.onrender.com/games/${game.id}`,
         { method: "DELETE" }
       );
-      if (deleteResponse.ok) {
-        alert("Entry deleted successfully!");
-        displayGames(); // refresh list without page reload
-      }
+      displayGames();
     });
     gameMessage.appendChild(deleteButton);
     messageContainer.appendChild(gameMessage);
