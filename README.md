@@ -1,24 +1,13 @@
-# Required for the project
+dor this asignment i had to create a geustbook in which users could see messages left by previous users and enter their own to do this i had to creat a databse in which the data could be stored and retieved from which i created using SQL following the demo from earlier in the week.
 
-Ensure your HTML form is working and submitting data into the database as expected.
+I also emplyed some responsive desing which will allow the page to adapt to various screen sizes while still having some funcitonality
 
-Confirm that your project is functional on multiple screen sizes using either Responsive Design or media queries.
+In order for the project to work I followwed the workshops and demo we did on wednesday to set up the monorepo using vite express and cors in order to create a server and client which allowed me to have good organistation and functionality for the front end and backend.
+after this was set up again using what was covered in the demo I linked the server.js to the database I had created. I then set about creating the front end in order to allow the user to interact with the data i created a form for them to add data to the database however I found it wasn't clear when the data was submited to I chose to add an alert that will pop up for them to see whic should elimenate any confusion.
 
-Create a working GET API route in your server.
+I struggled with adding the feature that allows the user to see the data as I am still not confident with DOM manipulation and as such I missed that I had edded 2 listeners to the submit event which caused the data enterd into the database to be entered twice and then have the data displayed multiple times which lead to the page becoming very clutered.
 
-Create a working POST API route in your client.
+after solving the display problem I chose to try and add a delete function in order to allow the user to reduce the number of entires and make for a better user experience as we haven't covered that yet I went to google and found this stackoverflow page https://stackoverflow.com/questions/65015000/how-do-i-use-express-js-app-delete-to-remove-a-specific-object-from-an-array which mentioned app.delete i then went to mdn docs to read about the HTTP delete method and about the delete function in java script which gave me a guide on what to do i also watch numerous tutorials and guide on youtube but found this one the most helpful https://www.youtube.com/watch?v=6Mrh1spmmK8 .
 
-Seed your database with realistic-looking ‘dummy’ data through the Supabase query editor or a seed file in your server. Ensure that this is saved and submitted (in a screenshot or seed file form) so it can be marked and tested efficiently.
-
-# Required Reflection
-
-     What requirements did you achieve?
-    Were there any requirements or goals that you were unable to achieve?
-     If so, what was it that you found difficult about these tasks?
-
-# Optional
-
-    Requesting feedback about a specific part of your submission.
-    What useful external sources helped you complete the assignment (e.g Youtube tutorials)?
-    What errors or bugs did you encounter while completing your assignment? How did you solve them?
-    What went really well and what could have gone better?
+I felt that I had a good grasp of the material this week which allowed me to feel more at ease on this project which allowed me to try to push myslef a little in adding the delete functionality to the page, I did sturggle a little with the actual deployment on render.com how ever that was due to me repeating the section to POST new data to the database and then miss lablelling the link /add-games in the messageContainer fetch request when I actually needed to put /games.
+repeating myself was the casue of a lot of the problems I encountered as was some spelling errors as such it was made clear I need to take extra care as to not repeat myslef going forward and to proof read my code before I go to deployment as this would help to lessen the number of errors I will encounter
